@@ -6,7 +6,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <html lang="zh">
@@ -66,7 +66,7 @@ const base = import.meta.env.BASE_URL;
 			<h1><a href={base}>Shicheng Huang</a></h1>
 		</header>
 		<main>
-			<a class="back" href={`${base}blog/`}>← 所有文章</a>
+			<a class="back" href={`${base}/blog/`}>← 所有文章</a>
 			<h1 class="post-title">{title}</h1>
 			<div class="date">
 				<FormattedDate date={pubDate} />
