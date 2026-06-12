@@ -6,7 +6,8 @@ import { defineConfig, fontProviders } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: process.env.ASTRO_SITE || 'http://localhost:4321',
+	site: 'https://steinsgate9.github.io',
+	base: '/my-blog',
 	integrations: [mdx(), sitemap()],
 	fonts: [
 		{
